@@ -10,6 +10,7 @@ int main () {
     int mass;
     int fuel;
     int total = 0;
+    int sum = 0;
 
     inFile.open("/Volumes/Vindrive/ProjectsCPP/Advent2019/Day1/input.txt");
 
@@ -19,8 +20,12 @@ int main () {
 
     while (!inFile.eof()) {
         inFile >> mass;
-        fuel = (mass / 3) - 2;
-        total += fuel;
+        while(mass > 0) {
+            mass = (mass / 3) - 2;
+            if(mass > 0) {
+                total += mass;
+            }
+        }
     }
 
     cout << total << endl;
